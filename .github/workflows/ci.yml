@@ -1,16 +1,16 @@
-name: CI for Angular # es un nombre para identificarlo
-on: push #es cada vez que esto se correo o cada commit hecho, se puede especificar en que rama, guiarse de la documentación
-jobs: #son las rutinas que se van a correr
-  unit-test: #serían las pruebas unitarias
-    runs-on: ubuntu-latest  #máquita con sistema operativo
-      steps: #que pasos vamos a correr en esa máquina
-        - name: Clone  #nombre para identificarlo
-          uses: actions/checkout@v2  #vamos hacer un clone de ese repositorio, en esa máquina va hacer un clone de ese proyeco
-        - name: Node setup #nombre para identificarlo
+name: CI for Angular
+on: push
+jobs:
+  unit-test:
+    runs-on: ubuntu-latest
+      steps:
+        - name: Clone
+          uses: actions/checkout@v2
+        - name: Node setup
           uses: actions/setup-node@v2
           with:
-            node-version: 14.x  #version del node.js
+            node-version: 14.x
         - name: Install
-          run: npm ci  #debemos correr este comando para servidores de integracion continua, eso recomienda npm
-        - name: run tests #para correr las pruebas
+          run: npm ci
+        - name: run tests
           run: npm run test -- --no-watch --code-coverage --browsers=ChromeHeadlessCI
