@@ -13,4 +13,4 @@ jobs: #son las rutinas que se van a correr
         - name: Install
           run: npm ci  #debemos correr este comando para servidores de integracion continua, eso recomienda npm
         - name: run tests #para correr las pruebas
-          run: ng test --no-watch --code-coverage --browsers=ChromeHeadlessCI
+          run: npm run test -- --no-watch --code-coverage --browsers=ChromeHeadlessCI
