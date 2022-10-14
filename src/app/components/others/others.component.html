@@ -1,0 +1,10 @@
+<section class="container">
+  <h3>Directivas</h3>
+  <h5 highligth>Hay un valor</h5>
+  <h5 highligth="yellow">valor</h5>
+  <input [(ngModel)]="color" [highligth]="color">
+  <h3>Pipe</h3>
+  <p>{{ 'my text' | reserve }}</p>
+  <input [(ngModel)]="text">
+  <p>{{text | reserve}}</p>
+</section>
